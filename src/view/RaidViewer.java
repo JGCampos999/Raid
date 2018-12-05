@@ -22,7 +22,7 @@ public class RaidViewer {
 			res = JOptionPane.showInputDialog(null, "Qual das opções representa a medida de dados?", "Selecao de itens",
 					JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
 		}
-		int quantDiscos = Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade de discos:"));
+		
 		if (res == opcoes[2]) {
 			tamanhoArquivo *= 8;
 		} else if (res == opcoes[3]) {
@@ -33,7 +33,9 @@ public class RaidViewer {
 			tamanhoArquivo *= (8 * Math.pow(10, 9));
 		}
 
-		JOptionPane.showMessageDialog(null, "Cada disco tem blocos de 32 bits");
+		int quantDiscos = Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade de discos:"));
+		
+		JOptionPane.showMessageDialog(null, "Cada disco ter� blocos de 32 bits");
 
 		RaidController control = new RaidController();
 		control.Raid(tamanhoArquivo, quantDiscos);
