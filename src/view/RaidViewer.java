@@ -10,8 +10,8 @@ public class RaidViewer {
 
 		long tamanhoArquivo = Integer
 				.parseInt(JOptionPane.showInputDialog("Insira o tamanho do arquivo sem a medida de dados:"));
-		Object[] opcoes = { "Selecione uma opção", tamanhoArquivo + " bits", tamanhoArquivo + " Bytes",
-				tamanhoArquivo + " Kilobytes", tamanhoArquivo + " Megabytes", tamanhoArquivo + " Gigabytes" };
+		Object[] opcoes = { "Selecione uma opção", tamanhoArquivo + " Bytes", tamanhoArquivo + " Kilobytes",
+				tamanhoArquivo + " Megabytes", tamanhoArquivo + " Gigabytes" };
 		Object res = JOptionPane.showInputDialog(null, "Qual das opções abaixo representa a medida de dados?",
 				"Seleçãoo de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
 
@@ -21,13 +21,13 @@ public class RaidViewer {
 					"Seleção de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
 		}
 
-		if (res == opcoes[2]) {
+		if (res == opcoes[1]) {
 			tamanhoArquivo *= 8;
-		} else if (res == opcoes[3]) {
+		} else if (res == opcoes[2]) {
 			tamanhoArquivo *= (8 * Math.pow(10, 3));
-		} else if (res == opcoes[4]) {
+		} else if (res == opcoes[3]) {
 			tamanhoArquivo *= (8 * Math.pow(10, 6));
-		} else if (res == opcoes[5]) {
+		} else if (res == opcoes[4]) {
 			tamanhoArquivo *= (8 * Math.pow(10, 9));
 		}
 
