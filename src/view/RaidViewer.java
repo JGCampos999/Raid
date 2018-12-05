@@ -10,19 +10,17 @@ public class RaidViewer {
 
 		long tamanhoArquivo = Integer
 				.parseInt(JOptionPane.showInputDialog("Insira o tamanho do arquivo sem a medida de dados:"));
-		Object[] opcoes = { "Selecione uma opÃ§Ã£o", tamanhoArquivo + " bits", tamanhoArquivo + " Bytes",
+		Object[] opcoes = { "Selecione uma opção", tamanhoArquivo + " bits", tamanhoArquivo + " Bytes",
 				tamanhoArquivo + " Kilobytes", tamanhoArquivo + " Megabytes", tamanhoArquivo + " Gigabytes" };
-		Object res = JOptionPane.showInputDialog(null, "Qual das opÃ§Ãµes representa a medida de dados?",
+		Object res = JOptionPane.showInputDialog(null, "Qual das opções abaixo representa a medida de dados?",
 				"Selecao de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
 
 		while (res == opcoes[0]) {
-			if (res == opcoes[0]) {
-				JOptionPane.showMessageDialog(null, "OpÃ§Ã£o invÃ¡lida");
-			}
-			res = JOptionPane.showInputDialog(null, "Qual das opÃ§Ãµes representa a medida de dados?", "Selecao de itens",
-					JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
+			JOptionPane.showMessageDialog(null, "Opção inválida");
+			res = JOptionPane.showInputDialog(null, "Qual das opções abaixo representa a medida de dados?",
+					"Selecao de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
 		}
-		
+
 		if (res == opcoes[2]) {
 			tamanhoArquivo *= 8;
 		} else if (res == opcoes[3]) {
@@ -34,7 +32,7 @@ public class RaidViewer {
 		}
 
 		int quantDiscos = Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade de discos:"));
-		
+
 		JOptionPane.showMessageDialog(null, "Cada disco terá blocos de 32 bits");
 
 		RaidController control = new RaidController();
