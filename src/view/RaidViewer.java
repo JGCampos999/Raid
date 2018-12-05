@@ -13,12 +13,12 @@ public class RaidViewer {
 		Object[] opcoes = { "Selecione uma opção", tamanhoArquivo + " bits", tamanhoArquivo + " Bytes",
 				tamanhoArquivo + " Kilobytes", tamanhoArquivo + " Megabytes", tamanhoArquivo + " Gigabytes" };
 		Object res = JOptionPane.showInputDialog(null, "Qual das opções abaixo representa a medida de dados?",
-				"Selecao de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
+				"Seleçãoo de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
 
 		while (res == opcoes[0]) {
 			JOptionPane.showMessageDialog(null, "Opção inválida");
 			res = JOptionPane.showInputDialog(null, "Qual das opções abaixo representa a medida de dados?",
-					"Selecao de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
+					"Seleção de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
 		}
 
 		if (res == opcoes[2]) {
