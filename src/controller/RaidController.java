@@ -18,15 +18,15 @@ public class RaidController {
 	public void Simular() throws IOException {
 		tamanhoArquivo = Integer
 				.parseInt(JOptionPane.showInputDialog("Insira o tamanho do arquivo sem a medida de dados:"));
-		Object[] opcoes = { "Selecione uma opÃ§Ã£o", tamanhoArquivo + " Bytes", tamanhoArquivo + " Kilobytes",
+		Object[] opcoes = { "Selecione uma opção", tamanhoArquivo + " Bytes", tamanhoArquivo + " Kilobytes",
 				tamanhoArquivo + " Megabytes", tamanhoArquivo + " Gigabytes" };
-		Object res = JOptionPane.showInputDialog(null, "Qual das opÃ§Ãµes abaixo representa a medida de dados?",
-				"SeleÃ§Ã£o de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
+		Object res = JOptionPane.showInputDialog(null, "Qual das opções abaixo representa a medida de dados?",
+				"Seleção de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
 
 		while (res == opcoes[0]) {
-			JOptionPane.showMessageDialog(null, "OpÃ§Ã£o invÃ¡lida");
-			res = JOptionPane.showInputDialog(null, "Qual das opÃ§Ãµes abaixo representa a medida de dados?",
-					"SeleÃ§Ã£o de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
+			JOptionPane.showMessageDialog(null, "Opção inválida");
+			res = JOptionPane.showInputDialog(null, "Qual das opções abaixo representa a medida de dados?",
+					"Seleção de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
 		}
 
 		if (res == opcoes[1]) {
@@ -52,8 +52,9 @@ public class RaidController {
 		}
 		StringBuffer valoresDisco = new StringBuffer();
 
-		valoresDisco.append("Convertendo para bits, seu tamanho Ã© de: " + tamanhoArquivo
-				+ " bits\nSendo assim, cada disco terÃ¡: " + (tamanhoArquivo / quantDiscos) + " bits\n\n");
+		valoresDisco.append("Convertendo para bits, seu tamanho é de: " + tamanhoArquivo
+				+ " bits\r\nSendo assim, cada disco terá¡: " + (tamanhoArquivo / quantDiscos)
+				+ " bits\r\nE cada bloco de cada disco terá 32 bits\r\n");
 		valoresDisco.append("\t\t");
 
 		for (int i = 0; i < quantDiscos; i++) {
