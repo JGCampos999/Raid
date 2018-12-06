@@ -1,42 +1,32 @@
 package view;
 
+import java.io.IOException;
 import javax.swing.JOptionPane;
-
 import controller.RaidController;
 
 public class RaidViewer {
 
-	public static void main(String[] args) {
-
-		long tamanhoArquivo = Integer
-				.parseInt(JOptionPane.showInputDialog("Insira o tamanho do arquivo sem a medida de dados:"));
-		Object[] opcoes = { "Selecione uma opção", tamanhoArquivo + " Bytes", tamanhoArquivo + " Kilobytes",
-				tamanhoArquivo + " Megabytes", tamanhoArquivo + " Gigabytes" };
-		Object res = JOptionPane.showInputDialog(null, "Qual das opções abaixo representa a medida de dados?",
-				"Seleçãoo de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
-
-		while (res == opcoes[0]) {
-			JOptionPane.showMessageDialog(null, "Opção inválida");
-			res = JOptionPane.showInputDialog(null, "Qual das opções abaixo representa a medida de dados?",
-					"Seleção de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
-		}
-
-		if (res == opcoes[1]) {
-			tamanhoArquivo *= 8;
-		} else if (res == opcoes[2]) {
-			tamanhoArquivo *= (8 * Math.pow(10, 3));
-		} else if (res == opcoes[3]) {
-			tamanhoArquivo *= (8 * Math.pow(10, 6));
-		} else if (res == opcoes[4]) {
-			tamanhoArquivo *= (8 * Math.pow(10, 9));
-		}
-
-		int quantDiscos = Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade de discos:"));
-
-		JOptionPane.showMessageDialog(null, "Cada disco terá blocos de 32 bits");
-
+	public static void main(String[] args) throws IOException {
 		RaidController control = new RaidController();
-		control.Raid(tamanhoArquivo, quantDiscos);
+		int Menu = 0;
+		do {
+			Menu = Integer.parseInt(JOptionPane.showInputDialog(
+					"1 - Simular Raid 0 e gravar Arquivo\n2 - Ler arquivo e exibir resultados\n9 - Fim"));
+			switch (Menu) {
+			case (1):
+				control.Simular();
+				break;
+			case (2):
+				control.Exibe();
+				break;
+			case (9):
+				JOptionPane.showMessageDialog(null, "Encerrando...");
+				System.exit(0);
+				break;
+			default:
+				JOptionPane.showMessageDialog(null, "OpÃ§Ã£o invÃ¡lida, tente novamente");
+			}
+		} while (Menu != 9);
 	}
 
 }
