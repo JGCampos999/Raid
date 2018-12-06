@@ -96,14 +96,7 @@ public class RaidController {
 			}
 			valoresDisco.append("\r\n");
 		}
-		String os = System.getProperty("os.name");
-		String dir;
-		if (os.contains("Linux")){
-			dir = "/home/";
-		}
-		else{
-			dir = "C\\TEMP";
-		}
+		String dir = "src/";
 		String arq = "Raid 0 Simulador.txt";
 		File diretorio = new File(dir);
 		if (diretorio.exists() && diretorio.isDirectory()) {
@@ -122,14 +115,7 @@ public class RaidController {
 	}
 
 	public void Exibe() throws IOException {
-		String os = System.getProperty("os.name");
-		String dir;
-		if (os.contains("Linux")){
-			dir = "/home/";
-		}
-		else{
-			dir = "C\\TEMP";
-		}
+		String dir = "src/";
 		String arq = "Raid 0 Simulador.txt";
 
 		File diretorio = new File(dir);
