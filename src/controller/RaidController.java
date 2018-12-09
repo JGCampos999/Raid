@@ -101,7 +101,7 @@ public class RaidController extends JPanel {
 				} catch (InterruptedException e) {
 					;
 				}
-				if ((i + 1) >= 100) {
+				if (i >= 100) {
 					System.out.print("Bloco" + i + "\t");
 				} else {
 					System.out.print("Bloco" + i + "\t\t");
