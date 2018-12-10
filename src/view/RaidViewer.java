@@ -24,7 +24,7 @@ public class RaidViewer {
 				System.exit(0);
 				break;
 			default:
-				JOptionPane.showMessageDialog(null, "Op√ß√£o inv√°lida, tente novamente");
+				JOptionPane.showMessageDialog(null, "OpÁ„o inv·lida, tente novamente");
 			}
 		} while (Menu != 9);
 	}

@@ -14,7 +14,6 @@ public class RaidController extends JPanel {
 	JProgressBar barra;
 
 	public RaidController() {
-		// initialize Progress Bar
 		barra = new JProgressBar();
 		barra.setMinimum(0);
 		add(barra);
@@ -24,19 +23,19 @@ public class RaidController extends JPanel {
 		tamanhoArquivo = Integer
 				.parseInt(JOptionPane.showInputDialog("Insira o tamanho do arquivo sem a medida de dados:"));
 		while (tamanhoArquivo <= 0) {
-			JOptionPane.showMessageDialog(null, "Valor invÃ¡lido, tente novamente");
+			JOptionPane.showMessageDialog(null, "Valor inválido, tente novamente");
 			tamanhoArquivo = Integer
 					.parseInt(JOptionPane.showInputDialog("Insira o tamanho do arquivo sem a medida de dados:"));
 		}
-		Object[] opcoes = { "Selecione uma opÃ§Ã£o", tamanhoArquivo + " Bytes", tamanhoArquivo + " Kilobytes",
+		Object[] opcoes = { "Selecione uma opção", tamanhoArquivo + " Bytes", tamanhoArquivo + " Kilobytes",
 				tamanhoArquivo + " Megabytes", tamanhoArquivo + " Gigabytes" };
-		Object res = JOptionPane.showInputDialog(null, "Qual das opÃ§Ãµes abaixo representa a medida de dados?",
-				"SeleÃ§Ã£o de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
+		Object res = JOptionPane.showInputDialog(null, "Qual das opções abaixo representa a medida de dados?",
+				"Seleção de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
 
 		while (res == opcoes[0]) {
-			JOptionPane.showMessageDialog(null, "OpÃ§Ã£o invÃ¡lida");
-			res = JOptionPane.showInputDialog(null, "Qual das opÃ§Ãµes abaixo representa a medida de dados?",
-					"SeleÃ§Ã£o de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
+			JOptionPane.showMessageDialog(null, "Opção inválida");
+			res = JOptionPane.showInputDialog(null, "Qual das opções abaixo representa a medida de dados?",
+					"Seleção de itens", JOptionPane.PLAIN_MESSAGE, null, opcoes, "");
 		}
 
 		if (res == opcoes[1]) {
@@ -51,7 +50,7 @@ public class RaidController extends JPanel {
 
 		quantDiscos = Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade de discos:"));
 		while (quantDiscos <= 0) {
-			JOptionPane.showMessageDialog(null, "Valor invÃ¡lido, tente novamente");
+			JOptionPane.showMessageDialog(null, "Valor inválido, tente novamente");
 			quantDiscos = Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade de discos:"));
 		}
 		if (tamanhoArquivo % 32 != 0) {
@@ -72,16 +71,16 @@ public class RaidController extends JPanel {
 	public void Simular() {
 		if (executou) {
 			final RaidController prct = new RaidController();
-			JFrame frame = new JFrame("Progress Bar Example");
+			JFrame frame = new JFrame("Progresso");
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.setContentPane(prct);
 			frame.pack();
 			frame.setVisible(true);
 			long vetDisc[] = new long[quantDiscos];
-			JOptionPane.showMessageDialog(null, "Convertendo para bits, seu tamanho Ã© de: " + tamanhoArquivo
-					+ " bits.\r\nSendo assim, cada disco terÃ¡: " + (tamanhoArquivo / quantDiscos)
-					+ " bits.\r\nAlÃ©m disso, cada bloco de cada disco terÃ¡ no mÃ¡ximo 32 bits.\r\n" + "Dando o total de "
-					+ tamanho + " bloco(s).\r");
+			JOptionPane.showMessageDialog(null, "Convertendo para bits, seu tamanho é de: " + tamanhoArquivo
+					+ " bits.\r\nSendo assim, cada disco terá: " + (tamanhoArquivo / quantDiscos)
+					+ " bits.\r\nAlém disso, cada bloco de cada disco terá no máximo 32 bits.\r\n" + "Dando o total de "
+					+ tamanho + " bloco(s).");
 			System.out.print("\t\t");
 			for (int i = 0; i < quantDiscos; i++) {
 				System.out.print("Disk" + (i + 1) + "\t");
@@ -118,9 +117,9 @@ public class RaidController extends JPanel {
 				}
 				System.out.print("\r\n");
 			}
-			JOptionPane.showMessageDialog(null, "SimulaÃ§Ã£o ConcluÃ­da");
+			JOptionPane.showMessageDialog(null, "Simulação Concluída");
 		} else {
-			JOptionPane.showMessageDialog(null, "Ã‰ necessÃ¡rio inserir valores ao menos uma vez.");
+			JOptionPane.showMessageDialog(null, "É necessário inserir valores ao menos uma vez.");
 		}
 	}
 
